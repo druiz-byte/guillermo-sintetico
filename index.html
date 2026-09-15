@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guillermo sintético</title>
+<meta name="description" content="Un avatar que presenta y comenta una presentación en castellano, inglés o portugués.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">G</span>
+    <div>
+      <h1 id="deckTitle">Guillermo sintético</h1>
+      <p class="sub" id="deckSub" data-i18n="subtitle">Presentación narrada por un avatar</p>
+    </div>
+  </div>
+  <div class="lang" role="radiogroup" aria-label="Idioma">
+    <button type="button" data-lang="es" role="radio">ES</button>
+    <button type="button" data-lang="en" role="radio">EN</button>
+    <button type="button" data-lang="pt" role="radio">PT</button>
+  </div>
+</header>
+
+<main class="stage">
+  <section class="slide-wrap" aria-live="polite">
+    <div class="slide" id="slide"></div>
+    <div class="slide-meta">
+      <span id="counter">1 / 1</span>
+      <select id="chapter" aria-label="Ir a"></select>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+  </section>
+
+  <aside class="presenter">
+    <div class="avatar-card">
+      <div class="avatar-box">
+        <video id="anamVideo" class="avatar anam" autoplay playsinline></video>
+        <div id="avatar" class="avatar"></div>
+      </div>
+      <div class="status"><span class="dot" id="statusDot"></span><span id="statusText" data-i18n="ready">Listo</span></div>
+    </div>
+    <div class="caption" id="caption" data-i18n="hint">Pulsa «Presentar» y elige idioma.</div>
+    <form class="ask" id="askForm" autocomplete="off">
+      <label for="askInput" data-i18n="askLabel">Pregunta a Guillermo</label>
+      <div class="ask-row">
+        <input id="askInput" type="text" maxlength="300" data-i18n-ph="askPh" placeholder="¿Cómo se aplica esto en una pyme?">
+        <button type="submit" data-i18n="askBtn">Preguntar</button>
+      </div>
+    </form>
+  </aside>
+</main>
+
+<nav class="controls" aria-label="Controles">
+  <button type="button" id="prevBtn" aria-label="Anterior">◀</button>
+  <button type="button" id="playBtn" class="primary" data-i18n="play">Presentar</button>
+  <button type="button" id="nextBtn" aria-label="Siguiente">▶</button>
+  <label class="toggle"><input type="checkbox" id="autoAdv" checked> <span data-i18n="auto">Avance automático</span></label>
+  <span class="mode" id="modeBadge"></span>
+</nav>
+<p class="disclaimer" data-i18n="disclaimer">Avatar sintético generado con IA. Las diapositivas son del autor de la presentación; los comentarios añadidos los genera la IA y pueden no reflejar su opinión.</p>
+
+<script src="config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/avatar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@anam-ai/js-sdk@4.27.0/dist/umd/anam.js"></script>
+<script src="js/anam.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

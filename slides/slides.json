@@ -1,0 +1,942 @@
+{
+ "title": "Transformación Digital para la PYME · Módulo 1.1 · Contexto digital",
+ "author": "Guillermo Dorronsoro",
+ "context": "Programa Transformación Digital PYME (Deusto Business School Executive Education), Módulo 1.1: Contexto digital. Audiencia: directivos y empresarios de pymes.",
+ "source": "deck.pdf",
+ "aspect": "960 / 720",
+ "slides": [
+  {
+   "pages": [
+    1,
+    1
+   ],
+   "images": [
+    "slides/img/p-001.jpg"
+   ],
+   "title": "Tabla de contenidos",
+   "text": "Bloque 1. Tendencias y Cambios en la Tecnología\n1. Grandes Tendencias de Cambio en el Siglo XXI\n2. Tres cajas de herramientas para gestionar el futuro y sus cambios\nPrimera Caja. ¿Cómo entender el futuro?\nSegunda Caja. ¿Cómo cambiar para adaptarse al futuro?\nTercera Caja. ¿Cómo crear cosas nuevas?\n2",
+   "brief": true
+  },
+  {
+   "pages": [
+    2,
+    4
+   ],
+   "images": [
+    "slides/img/p-002.jpg",
+    "slides/img/p-003.jpg",
+    "slides/img/p-004.jpg"
+   ],
+   "title": "¿Cuáles son los motores de cambio en la Historia?",
+   "text": "¿Qué fuerzas mueven el Mundo?\neconomía\npoder\ndeseo\n5"
+  },
+  {
+   "pages": [
+    5,
+    6
+   ],
+   "images": [
+    "slides/img/p-005.jpg",
+    "slides/img/p-006.jpg"
+   ],
+   "title": "¿Cuáles son los motores de cambio en la Historia?",
+   "text": "¿Qué fuerzas mueven el Mundo?\nDemografía Ciencia\npersonas\nideas\nGlobalización Tecnología\n7"
+  },
+  {
+   "pages": [
+    7,
+    17
+   ],
+   "images": [
+    "slides/img/p-007.jpg",
+    "slides/img/p-008.jpg",
+    "slides/img/p-009.jpg",
+    "slides/img/p-010.jpg",
+    "slides/img/p-011.jpg",
+    "slides/img/p-012.jpg",
+    "slides/img/p-013.jpg",
+    "slides/img/p-014.jpg",
+    "slides/img/p-015.jpg",
+    "slides/img/p-016.jpg",
+    "slides/img/p-017.jpg"
+   ],
+   "title": "Demografía",
+   "text": "8\n7\n6\n5\n4\n3\n2\n1\n¿Seguiremos creciendo siempre\na un ritmo de 1000 millones cada 12 años?\n1400\n1600\n1800\n2000\nSources: Biraben 1980; McEvedy & Jones 1978; UN World Pop. Prosp. 2012; combined by Gapminder.\n18"
+  },
+  {
+   "pages": [
+    18,
+    19
+   ],
+   "images": [
+    "slides/img/p-018.jpg",
+    "slides/img/p-019.jpg"
+   ],
+   "title": "Natalidad (hijos por mujer)",
+   "text": "Media continental\n6\nAfrica\n5 Europe\nAsia\n4\nDemografía\nAmericas\n3\n2\n1\n1800\n1900\n2000\n2100\n20"
+  },
+  {
+   "pages": [
+    20,
+    20
+   ],
+   "images": [
+    "slides/img/p-020.jpg"
+   ],
+   "title": "Demografía: estabilización de la población",
+   "text": "11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\ntendencias actuales\nDemografía\n[escenario más probable]\nla Humanidad\nestabilizará su población\nantes del final de este\nSiglo XXI\n1400\n1600\n1800\n2000\nSources: Biraben 1980; McEvedy & Jones 1978; UN World Pop. Prosp. 2012; combined by Gapminder.\n21"
+  },
+  {
+   "pages": [
+    21,
+    22
+   ],
+   "images": [
+    "slides/img/p-021.jpg",
+    "slides/img/p-022.jpg"
+   ],
+   "title": "Demografía",
+   "text": "> 60\n45\n30\n15\n1\n1\n1\n1\n1\n1\n1\n1\n5\n1\n4\n1\n1\n1\n1 2100 11.000 Millones\n23"
+  },
+  {
+   "pages": [
+    23,
+    24
+   ],
+   "images": [
+    "slides/img/p-023.jpg",
+    "slides/img/p-024.jpg"
+   ],
+   "title": "Olas de cambio de la Demografía en 2030",
+   "text": "¿ Cúales serán las olas de cambio\nque traerá la Demografía en 2030 ?\nDemografía\nEnvejecimiento\nJubilación Boom\nHasta 2030\nla población mundial\nse habrá incrementado en\n1000 millones de personas\n25"
+  },
+  {
+   "pages": [
+    25,
+    25
+   ],
+   "images": [
+    "slides/img/p-025.jpg"
+   ],
+   "title": "Olas de cambio de la Demografía en 2030",
+   "text": "¿ Cúales serán las olas de cambio\nque traerá la Demografía en 2030 ?\nDemografía\nEnvejecimiento\nJubilación Boom\nEste incremento se dará\nfundamentalmente\nen África\n26"
+  },
+  {
+   "pages": [
+    26,
+    26
+   ],
+   "images": [
+    "slides/img/p-026.jpg"
+   ],
+   "title": "Olas de cambio de la Demografía en 2030",
+   "text": "¿ Cúales serán las olas de cambio\nque traerá la Demografía en 2030 ?\nDemografía\nEnvejecimiento\nJubilación Boom\nMientras en Europa\nel fenómeno más\nrelevante será el\nenvejecimiento\nde la población\n27"
+  },
+  {
+   "pages": [
+    27,
+    27
+   ],
+   "images": [
+    "slides/img/p-027.jpg"
+   ],
+   "title": "Olas de cambio de la Demografía en 2030",
+   "text": "¿ Cúales serán las olas de cambio\nque traerá la Demografía en 2030 ?\nDemografía\nEnvejecimiento\nJubilación Boom\nMirando en detalle\nLa evolución de la\npirámide demográfica\nEn la próxima década,\nEspaña asistirá a un reto\ndemográfico sin precedentes:\nla jubilación\nde la generación Baby-Boom\n28"
+  },
+  {
+   "pages": [
+    28,
+    30
+   ],
+   "images": [
+    "slides/img/p-028.jpg",
+    "slides/img/p-029.jpg",
+    "slides/img/p-030.jpg"
+   ],
+   "title": "Globalización",
+   "text": "31"
+  },
+  {
+   "pages": [
+    31,
+    31
+   ],
+   "images": [
+    "slides/img/p-031.jpg"
+   ],
+   "title": "Globalización",
+   "text": "32"
+  },
+  {
+   "pages": [
+    32,
+    32
+   ],
+   "images": [
+    "slides/img/p-032.jpg"
+   ],
+   "title": "Olas de cambio de la Globalización en 2030",
+   "text": "traerá la Globalización en 2030?\n33"
+  },
+  {
+   "pages": [
+    33,
+    33
+   ],
+   "images": [
+    "slides/img/p-033.jpg"
+   ],
+   "title": "Olas de cambio de la Globalización en 2030",
+   "text": "traerá la Globalización en 2030?\n34"
+  },
+  {
+   "pages": [
+    34,
+    34
+   ],
+   "images": [
+    "slides/img/p-034.jpg"
+   ],
+   "title": "Olas de cambio de la Globalización en 2030",
+   "text": "traerá la Globalización en 2030?\n35"
+  },
+  {
+   "pages": [
+    35,
+    35
+   ],
+   "images": [
+    "slides/img/p-035.jpg"
+   ],
+   "title": "Olas de cambio de la Globalización en 2030",
+   "text": "traerá la Globalización en 2030?\n36"
+  },
+  {
+   "pages": [
+    36,
+    36
+   ],
+   "images": [
+    "slides/img/p-036.jpg"
+   ],
+   "title": "Olas de cambio de la Globalización en 2030",
+   "text": "traerá la Globalización en 2030?\n37"
+  },
+  {
+   "pages": [
+    37,
+    37
+   ],
+   "images": [
+    "slides/img/p-037.jpg"
+   ],
+   "title": "Olas de cambio de la Globalización en 2030",
+   "text": "traerá la Globalización en 2030?\n38"
+  },
+  {
+   "pages": [
+    38,
+    38
+   ],
+   "images": [
+    "slides/img/p-038.jpg"
+   ],
+   "title": "Olas de cambio de la Globalización en 2030",
+   "text": "traerá la Globalización en 2030?\n39"
+  },
+  {
+   "pages": [
+    39,
+    40
+   ],
+   "images": [
+    "slides/img/p-039.jpg",
+    "slides/img/p-040.jpg"
+   ],
+   "title": "Ciencia",
+   "text": "41"
+  },
+  {
+   "pages": [
+    41,
+    41
+   ],
+   "images": [
+    "slides/img/p-041.jpg"
+   ],
+   "title": "Ciencia",
+   "text": "42"
+  },
+  {
+   "pages": [
+    42,
+    42
+   ],
+   "images": [
+    "slides/img/p-042.jpg"
+   ],
+   "title": "Ciencia",
+   "text": "43"
+  },
+  {
+   "pages": [
+    43,
+    43
+   ],
+   "images": [
+    "slides/img/p-043.jpg"
+   ],
+   "title": "Ciencia",
+   "text": "44"
+  },
+  {
+   "pages": [
+    44,
+    44
+   ],
+   "images": [
+    "slides/img/p-044.jpg"
+   ],
+   "title": "Ciencia",
+   "text": "45"
+  },
+  {
+   "pages": [
+    45,
+    48
+   ],
+   "images": [
+    "slides/img/p-045.jpg",
+    "slides/img/p-046.jpg",
+    "slides/img/p-047.jpg",
+    "slides/img/p-048.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n49"
+  },
+  {
+   "pages": [
+    49,
+    50
+   ],
+   "images": [
+    "slides/img/p-049.jpg",
+    "slides/img/p-050.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n51"
+  },
+  {
+   "pages": [
+    51,
+    52
+   ],
+   "images": [
+    "slides/img/p-051.jpg",
+    "slides/img/p-052.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n53"
+  },
+  {
+   "pages": [
+    53,
+    53
+   ],
+   "images": [
+    "slides/img/p-053.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n54"
+  },
+  {
+   "pages": [
+    54,
+    54
+   ],
+   "images": [
+    "slides/img/p-054.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n55"
+  },
+  {
+   "pages": [
+    55,
+    55
+   ],
+   "images": [
+    "slides/img/p-055.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n56"
+  },
+  {
+   "pages": [
+    56,
+    56
+   ],
+   "images": [
+    "slides/img/p-056.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n57"
+  },
+  {
+   "pages": [
+    57,
+    57
+   ],
+   "images": [
+    "slides/img/p-057.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n58"
+  },
+  {
+   "pages": [
+    58,
+    58
+   ],
+   "images": [
+    "slides/img/p-058.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n59"
+  },
+  {
+   "pages": [
+    59,
+    59
+   ],
+   "images": [
+    "slides/img/p-059.jpg"
+   ],
+   "title": "Olas de cambio de la Ciencia en 2030",
+   "text": "traerá la Ciencia en 2030 ?\n60"
+  },
+  {
+   "pages": [
+    60,
+    60
+   ],
+   "images": [
+    "slides/img/p-060.jpg"
+   ],
+   "title": "Tecnología",
+   "text": "61"
+  },
+  {
+   "pages": [
+    61,
+    61
+   ],
+   "images": [
+    "slides/img/p-061.jpg"
+   ],
+   "title": "Tecnología",
+   "text": "62"
+  },
+  {
+   "pages": [
+    62,
+    62
+   ],
+   "images": [
+    "slides/img/p-062.jpg"
+   ],
+   "title": "Tecnología",
+   "text": "63"
+  },
+  {
+   "pages": [
+    63,
+    63
+   ],
+   "images": [
+    "slides/img/p-063.jpg"
+   ],
+   "title": "Tabla de contenidos",
+   "text": "Bloque 1. Tendencias y Cambios en la Tecnología\n1. Grandes Tendencias de Cambio en el Siglo XXI\n2. Tres cajas de herramientas para gestionar el futuro y sus cambios\nPrimera Caja. ¿Cómo entender el futuro?\nSegunda Caja. ¿Cómo cambiar para adaptarse al futuro?\nTercera Caja. ¿Cómo crear cosas nuevas?\n64",
+   "brief": true
+  },
+  {
+   "pages": [
+    64,
+    65
+   ],
+   "images": [
+    "slides/img/p-064.jpg",
+    "slides/img/p-065.jpg"
+   ],
+   "title": "SOMOS FUTURICIÓN",
+   "text": "La vida es\nuna serie de colisiones\ncon el futuro:\nno es la suma de lo que hemos sido,\nsino de lo que anhelamos ser.\nJosé Ortega y Gasset\nFilósofo\n66"
+  },
+  {
+   "pages": [
+    66,
+    66
+   ],
+   "images": [
+    "slides/img/p-066.jpg"
+   ],
+   "title": "¿Cuál es la diferencia entre vivir con riesgo y vivir con incertidumbre?",
+   "text": "67"
+  },
+  {
+   "pages": [
+    67,
+    67
+   ],
+   "images": [
+    "slides/img/p-067.jpg"
+   ],
+   "title": "¿Vivimos en tiempos VUCA?",
+   "text": "68"
+  },
+  {
+   "pages": [
+    68,
+    69
+   ],
+   "images": [
+    "slides/img/p-068.jpg",
+    "slides/img/p-069.jpg"
+   ],
+   "title": "¿Cómo solemos pensar en el futuro?",
+   "text": "70"
+  },
+  {
+   "pages": [
+    70,
+    71
+   ],
+   "images": [
+    "slides/img/p-070.jpg",
+    "slides/img/p-071.jpg"
+   ],
+   "title": "Cómo es el futuro, en realidad",
+   "text": "72"
+  },
+  {
+   "pages": [
+    72,
+    73
+   ],
+   "images": [
+    "slides/img/p-072.jpg",
+    "slides/img/p-073.jpg"
+   ],
+   "title": "Algunas citas y ejercicios para pensar",
+   "text": "“Somos lo que hacemos repetidamente”\nAristóteles\n“Somos lo que hacemos. Pero, sobre todo,\nsomos lo que hacemos para cambiar lo que somos”\nEduardo Galeano\n\"Quien pretenda una felicidad y sabiduría constantes,\ndeberá acomodarse a frecuentes cambios“\nConfucio\nEjercicio práctico:\nReflexión y debate ¿Quiénes somos en realidad, nuestras rutinas o las cosas que\nhacemos para cambiarlas? ¿O somos la suma de las dos cosas?\n¿Cómo buscar un equilibrio entre los cambios que trae el futuro,\ny las rutinas y planes que traemos del pasado y os ayudan a vivir?\n74"
+  },
+  {
+   "pages": [
+    74,
+    77
+   ],
+   "images": [
+    "slides/img/p-074.jpg",
+    "slides/img/p-075.jpg",
+    "slides/img/p-076.jpg",
+    "slides/img/p-077.jpg"
+   ],
+   "title": "Cuatro formas de mirar el futuro",
+   "text": "futuro. No he venido\naquí a decirte cómo\nterminará esto. He\nvenido a decirte\ncómo empieza.”\n“La vida es como\nuna caja de\nbombones: nunca\nsabes lo que te va a\ntocar.”\nEl futuro como\nenemigo.\nDía de la marmota:\nEl futuro como\nrepetición del\npresente\n78"
+  },
+  {
+   "pages": [
+    78,
+    80
+   ],
+   "images": [
+    "slides/img/p-078.jpg",
+    "slides/img/p-079.jpg",
+    "slides/img/p-080.jpg"
+   ],
+   "title": "Decidir, fluir, resistir o repetir",
+   "text": "FLUIR, ACEPTAR\nLUCHAR, RESISTIR\nCREAR Y REPETIR\nRUTINAS\nLa pregunta más importante de nuestra vida:\n¿ Cómo acertar cuál es la forma más adecuada de gestionar el destino ?\n¿ Cómo elegir en cada momento entre estas alternativas ?\n¿Podríamos aprender“el arte de dar oportunidades al destino”?\nHeráclito ya lo decía: “ethos anthropoi daimon”\n81"
+  },
+  {
+   "pages": [
+    81,
+    82
+   ],
+   "images": [
+    "slides/img/p-081.jpg",
+    "slides/img/p-082.jpg"
+   ],
+   "title": "El arte de dar oportunidades al destino (libro)"
+  },
+  {
+   "pages": [
+    83,
+    84
+   ],
+   "images": [
+    "slides/img/p-083.jpg",
+    "slides/img/p-084.jpg"
+   ],
+   "title": "El Castillo de If y el abate Faria",
+   "text": "en la celda contigua,\nguarda el mapa\nde un inmenso tesoro\n85"
+  },
+  {
+   "pages": [
+    85,
+    89
+   ],
+   "images": [
+    "slides/img/p-085.jpg",
+    "slides/img/p-086.jpg",
+    "slides/img/p-087.jpg",
+    "slides/img/p-088.jpg",
+    "slides/img/p-089.jpg"
+   ],
+   "title": "El arte de dar oportunidades al destino",
+   "text": "de dar oportunidades al destino\nTres cajas de herramientas:\n1º Caja\n¿Cómo entender el futuro?\n2ª Caja\n¿Cómo cambiar para adaptarse al futuro?\n3ª Caja\n¿Cómo crear cosas nuevas?\n90"
+  },
+  {
+   "pages": [
+    90,
+    90
+   ],
+   "images": [
+    "slides/img/p-090.jpg"
+   ],
+   "title": "Tabla de contenidos",
+   "text": "Bloque 1. Tendencias y Cambios en la Tecnología\n1. Grandes Tendencias de Cambio en el Siglo XXI\n2. Tres cajas de herramientas para gestionar el futuro y sus cambios\nPrimera Caja. ¿Cómo entender el futuro?\nSegunda Caja. ¿Cómo cambiar para adaptarse al futuro?\nTercera Caja. ¿Cómo crear cosas nuevas?\n91",
+   "brief": true
+  },
+  {
+   "pages": [
+    91,
+    91
+   ],
+   "images": [
+    "slides/img/p-091.jpg"
+   ],
+   "title": "Primera caja: ¿Cómo entender el futuro?",
+   "text": "Tres herramientas clave para entender el futuro\n• La Historia no se repite, pero rima\n92"
+  },
+  {
+   "pages": [
+    92,
+    93
+   ],
+   "images": [
+    "slides/img/p-092.jpg",
+    "slides/img/p-093.jpg"
+   ],
+   "title": "Primera caja: ¿Cómo entender el futuro?",
+   "text": "Tres herramientas clave para entender el futuro\n• La Historia no se repite, pero rima\n• Entender el futuro en ocasiones requiere nuevos mapas\n94"
+  },
+  {
+   "pages": [
+    94,
+    101
+   ],
+   "images": [
+    "slides/img/p-094.jpg",
+    "slides/img/p-095.jpg",
+    "slides/img/p-096.jpg",
+    "slides/img/p-097.jpg",
+    "slides/img/p-098.jpg",
+    "slides/img/p-099.jpg",
+    "slides/img/p-100.jpg",
+    "slides/img/p-101.jpg"
+   ],
+   "title": "Tiempos de Cambio",
+   "text": "Edward Jenner\nJames\nWatt\n1776\nJames Watt\nJames\nWatt\n1776\nAdam Smith\nThomas Jefferson Jean J. Russeau\nAdam\nSmith\nThomas\nJefferson\n1776\n1776\nJean Jacques\nRousseau\n1762\n102"
+  },
+  {
+   "pages": [
+    102,
+    102
+   ],
+   "images": [
+    "slides/img/p-102.jpg"
+   ],
+   "title": "Llevamos con mapas parecidos desde hace 250 años",
+   "text": "Siglos XV – XVI\nRenacimiento\nSiglo XVII\nRevolución Científica\nSiglo XVIII\nIlustración + Revolución\n103"
+  },
+  {
+   "pages": [
+    103,
+    103
+   ],
+   "images": [
+    "slides/img/p-103.jpg"
+   ],
+   "title": "Keep calm, there's a paradigm shift"
+  },
+  {
+   "pages": [
+    104,
+    105
+   ],
+   "images": [
+    "slides/img/p-104.jpg",
+    "slides/img/p-105.jpg"
+   ],
+   "title": "Para solucionar problemas, cambiar la forma de mirarlos",
+   "text": "es preciso cambiar la forma de mirarlos\nA B C\nSi pulso uno de los interruptores y entro en la habitación:\n- 1/3 probabilidad de que esté encendida (en ese caso sería A)\n- 2/3 probabilidad de que esté apagada (pero podría ser B ó C)\nNo puedo saber con seguridad cuál es el interruptor correcto\nA B C\nSi pulso dos de los interruptores y entro en la habitación:\n- 2/3 probabilidad de que esté encendida (pero podría ser A ó B)\n- 1/3 probabilidad de que esté apagada (en ese caso sería C)\nNo puedo saber con seguridad cuál es el interruptor correcto\nA B C\nA B C\nSi pulso los tres interruptores, y entro en la habitación:\n- 100% probabilidad de que esté encendida (pero podría ser A, B ó C)\nNo puedo saber con seguridad cuál es el interruptor correcto\nSi no pulso ninguno de los tres, y entro en la habitación:\n- 100% probabilidad de que esté apagada (podría ser A, B ó C)\nNo puedo saber con seguridad cuál es el interruptor correcto\n106"
+  },
+  {
+   "pages": [
+    106,
+    108
+   ],
+   "images": [
+    "slides/img/p-106.jpg",
+    "slides/img/p-107.jpg",
+    "slides/img/p-108.jpg"
+   ],
+   "title": "Para solucionar problemas, cambiar la forma de mirarlos",
+   "text": "es preciso cambiar la forma de mirarlos\nLa tierra es plana (esférica)\nLas órbitas son circulares (elípticas)\nEl átomo es indivisible (partículas subatómicas)\nTiempo y espacio absolutos (velocidad luz absoluta)\nUniverso eterno (Big Bang)\nCreacionismo (evolución)\n…\n109"
+  },
+  {
+   "pages": [
+    109,
+    109
+   ],
+   "images": [
+    "slides/img/p-109.jpg"
+   ],
+   "title": "Análisis de paradigmas"
+  },
+  {
+   "pages": [
+    110,
+    110
+   ],
+   "images": [
+    "slides/img/p-110.jpg"
+   ],
+   "title": "¿Estamos llegando a un nuevo cambio de era?",
+   "text": "111"
+  },
+  {
+   "pages": [
+    111,
+    111
+   ],
+   "images": [
+    "slides/img/p-111.jpg"
+   ],
+   "title": "¿Qué mapas mentales, qué paradigmas cambiar?",
+   "text": "112"
+  },
+  {
+   "pages": [
+    112,
+    112
+   ],
+   "images": [
+    "slides/img/p-112.jpg"
+   ],
+   "title": "Primera caja: ¿Cómo entender el futuro?",
+   "text": "Tres herramientas clave para entender el futuro\n• La Historia no se repite, pero rima\n• Entender el futuro en ocasiones requiere nuevos mapas\n• La clave es entender la velocidad a la que llega el futuro\n113"
+  },
+  {
+   "pages": [
+    113,
+    113
+   ],
+   "images": [
+    "slides/img/p-113.jpg"
+   ],
+   "title": "Algunos ejemplos de la dificultad de anticipar el futuro",
+   "text": "114"
+  },
+  {
+   "pages": [
+    114,
+    115
+   ],
+   "images": [
+    "slides/img/p-114.jpg",
+    "slides/img/p-115.jpg"
+   ],
+   "title": "Algunos ejemplos de la dificultad de anticipar el futuro",
+   "text": "Impact\nLikelihood\n116"
+  },
+  {
+   "pages": [
+    116,
+    118
+   ],
+   "images": [
+    "slides/img/p-116.jpg",
+    "slides/img/p-117.jpg",
+    "slides/img/p-118.jpg"
+   ],
+   "title": "Algunos ejemplos de la dificultad de anticipar el futuro",
+   "text": "119"
+  },
+  {
+   "pages": [
+    119,
+    120
+   ],
+   "images": [
+    "slides/img/p-119.jpg",
+    "slides/img/p-120.jpg"
+   ],
+   "title": "Algunos ejemplos de la dificultad de anticipar el futuro",
+   "text": "121"
+  },
+  {
+   "pages": [
+    121,
+    121
+   ],
+   "images": [
+    "slides/img/p-121.jpg"
+   ],
+   "title": "Primera caja: ¿Cómo entender el futuro?",
+   "text": "122"
+  },
+  {
+   "pages": [
+    122,
+    123
+   ],
+   "images": [
+    "slides/img/p-122.jpg",
+    "slides/img/p-123.jpg"
+   ],
+   "title": "Primera caja: ¿Cómo entender el futuro?",
+   "text": "124"
+  },
+  {
+   "pages": [
+    124,
+    124
+   ],
+   "images": [
+    "slides/img/p-124.jpg"
+   ],
+   "title": "Tabla de contenidos",
+   "text": "Bloque 1. Tendencias y Cambios en la Tecnología\n1. Grandes Tendencias de Cambio en el Siglo XXI\n2. Tres cajas de herramientas para gestionar el futuro y sus cambios\nPrimera Caja. ¿Cómo entender el futuro?\nSegunda Caja. ¿Cómo cambiar para adaptarse al futuro?\nTercera Caja. ¿Cómo crear cosas nuevas?\n125",
+   "brief": true
+  },
+  {
+   "pages": [
+    125,
+    126
+   ],
+   "images": [
+    "slides/img/p-125.jpg",
+    "slides/img/p-126.jpg"
+   ],
+   "title": "Segunda caja: ¿Cómo cambiar para adaptarse al futuro?",
+   "text": "Cinco herramientas clave para gestionar los cambios\n• Cambiar siempre cuesta mucho más de lo que pensamos\n• A cambiar se aprende estudiando\n127"
+  },
+  {
+   "pages": [
+    127,
+    128
+   ],
+   "images": [
+    "slides/img/p-127.jpg",
+    "slides/img/p-128.jpg"
+   ],
+   "title": "Segunda caja: ¿Cómo cambiar para adaptarse al futuro?",
+   "text": "Cinco herramientas clave para gestionar los cambios\n• Cambiar siempre cuesta mucho más de lo que pensamos\n• A cambiar se aprende estudiando\n129"
+  },
+  {
+   "pages": [
+    129,
+    130
+   ],
+   "images": [
+    "slides/img/p-129.jpg",
+    "slides/img/p-130.jpg"
+   ],
+   "title": "Segunda caja: ¿Cómo cambiar para adaptarse al futuro?",
+   "text": "Cinco herramientas clave para gestionar los cambios\n• Cambiar siempre cuesta mucho más de lo que pensamos\n• A cambiar se aprende estudiando\n• A cambiar se aprende cambiando\n• Cambiar es un deporte de riesgo (emocional)\n131"
+  },
+  {
+   "pages": [
+    131,
+    131
+   ],
+   "images": [
+    "slides/img/p-131.jpg"
+   ],
+   "title": "Segunda caja: ¿Cómo cambiar para adaptarse al futuro?",
+   "text": "132"
+  },
+  {
+   "pages": [
+    132,
+    132
+   ],
+   "images": [
+    "slides/img/p-132.jpg"
+   ],
+   "title": "Segunda caja: ¿Cómo cambiar para adaptarse al futuro?",
+   "text": "Cinco herramientas clave para gestionar los cambios\n• Cambiar siempre cuesta mucho más de lo que pensamos\n• A cambiar se aprende estudiando\n• A cambiar se aprende cambiando\n• Cambiar es un deporte de riesgo (emocional)\n• El momento para cambiar, es cuando todo va bien\n133"
+  },
+  {
+   "pages": [
+    133,
+    133
+   ],
+   "images": [
+    "slides/img/p-133.jpg"
+   ],
+   "title": "Segunda caja: ¿Cómo cambiar para adaptarse al futuro?",
+   "text": "134"
+  },
+  {
+   "pages": [
+    134,
+    134
+   ],
+   "images": [
+    "slides/img/p-134.jpg"
+   ],
+   "title": "Tabla de contenidos",
+   "text": "Bloque 1. Tendencias y Cambios en la Tecnología\n1. Grandes Tendencias de Cambio en el Siglo XXI\n2. Tres cajas de herramientas para gestionar el futuro y sus cambios\nPrimera Caja. ¿Cómo entender el futuro?\nSegunda Caja. ¿Cómo cambiar para adaptarse al futuro?\nTercera Caja. ¿Cómo crear cosas nuevas?\n135",
+   "brief": true
+  },
+  {
+   "pages": [
+    135,
+    136
+   ],
+   "images": [
+    "slides/img/p-135.jpg",
+    "slides/img/p-136.jpg"
+   ],
+   "title": "Tercera caja: ¿Cómo crear cosas nuevas?",
+   "text": "Tres herramientas para crear y emprender\n• No perder tiempo en criticar lo viejo. Poner foco en crear.\n137"
+  },
+  {
+   "pages": [
+    137,
+    140
+   ],
+   "images": [
+    "slides/img/p-137.jpg",
+    "slides/img/p-138.jpg",
+    "slides/img/p-139.jpg",
+    "slides/img/p-140.jpg"
+   ],
+   "title": "Tercera caja: ¿Cómo crear cosas nuevas?",
+   "text": "Cinco herramientas para crear y emprender\n• No perder tiempo en criticar lo viejo. Poner foco en crear.\n• Crear también es cosa de emociones. De una en concreto: la pasión\n• Pasar de la idea al proyecto requiere esfuerzo, recursos, dedicación exclusiva\n• Estrategia emergente: el primer plan nunca es el bueno\n• Resiliencia y perseverancia. Pero también aprender a enterrar los cadáveres\n141"
+  },
+  {
+   "pages": [
+    141,
+    141
+   ],
+   "images": [
+    "slides/img/p-141.jpg"
+   ],
+   "title": "Gracias!",
+   "text": "linkedin.com/in/guiller\n@guillerdorron\ndbs.deusto.es"
+  }
+ ]
+}

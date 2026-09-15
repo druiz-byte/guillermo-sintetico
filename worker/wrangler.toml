@@ -1,0 +1,20 @@
+name = "guillermo-sintetico-api"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# Orígenes autorizados (tu GitHub Pages). localhost se permite siempre para pruebas.
+ALLOWED_ORIGINS = "https://druiz-byte.github.io"
+CLAUDE_MODEL = "claude-sonnet-5"
+ELEVEN_MODEL = "eleven_multilingual_v2"
+# Voz de ElevenLabs (una para los tres idiomas, o una por idioma con VOICE_ID_ES / VOICE_ID_EN / VOICE_ID_PT)
+VOICE_ID = "PON_AQUI_TU_VOICE_ID"
+# Segundos que se reutiliza el guion generado por diapositiva+idioma (0 = generar siempre de nuevo)
+# Anam: avatar en tiempo real
+ANAM_AVATAR_ID = "d7741c8e-2541-456b-a72f-c24882a5364a"
+# "elevenlabs" = voz ElevenLabs con labios de Anam; "anam" = voz propia de Anam (define ANAM_VOICE_ID o ANAM_VOICE_ID_ES/_EN/_PT)
+VOICE_PROVIDER = "elevenlabs"
+# Duración máxima de cada sesión de avatar (segundos)
+ANAM_MAX_SECONDS = "1800"
+CACHE_TTL = "604800"
+PROMPT_VERSION = "1"
