@@ -1,0 +1,34 @@
+# Blueprint de Render: New → Blueprint → elige este repositorio.
+services:
+  - type: web
+    name: guillermo-sintetico-api
+    runtime: node
+    plan: free
+    buildCommand: "echo sin dependencias"
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://druiz-byte.github.io
+      - key: CLAUDE_MODEL
+        value: claude-sonnet-5
+      - key: ANAM_AVATAR_ID
+        value: d7741c8e-2541-456b-a72f-c24882a5364a
+      - key: VOICE_PROVIDER
+        value: anam
+      # Voz de Anam por idioma (Anam Lab → Voices). Si una sola voz habla los tres, usa solo ANAM_VOICE_ID.
+      - key: ANAM_VOICE_ID_ES
+        sync: false
+      - key: ANAM_VOICE_ID_EN
+        sync: false
+      - key: ANAM_VOICE_ID_PT
+        sync: false
+      - key: ANAM_MAX_SECONDS
+        value: "1800"
+      - key: CACHE_TTL
+        value: "604800"
+      # ElevenLabs (opcional, solo si VOICE_PROVIDER=elevenlabs): VOICE_ID=1L0ubPimgT4w6tFx3EmH (Roger) y ELEVENLABS_API_KEY
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ANAM_API_KEY
+        sync: false
