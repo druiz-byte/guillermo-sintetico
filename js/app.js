@@ -276,6 +276,7 @@
     const params = new URLSearchParams(location.search);
     if (T[params.get('lang')]) st.lang = params.get('lang');
     st.deck = await (await fetch(params.get('deck') || C.DECK_URL, { cache: 'no-cache' })).json();
+    if (C.DECK_TITLE && !params.get('deck')) st.deck.title = C.DECK_TITLE;
     if ('speechSynthesis' in window) speechSynthesis.getVoices();
     if (st.deck.aspect) document.documentElement.style.setProperty('--slide-aspect', st.deck.aspect);
     buildChapters();
