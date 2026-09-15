@@ -8,6 +8,8 @@ window.GS_CONFIG = {
   // Voz: "anam" (voz propia de Anam) o "elevenlabs" (Anam sincroniza los labios con el audio de ElevenLabs).
   VOICE_PROVIDER: "anam",
   DECK_URL: "slides/slides.json",
+  // Título que se muestra y se envía a la IA (si está vacío se usa el de slides.json)
+  DECK_TITLE: "Transformación Digital para la PYME · Contexto digital",
   DEFAULT_LANG: "es",
   PRESENTER_NAME: "Guillermo",
   AUTO_ADVANCE: true,
