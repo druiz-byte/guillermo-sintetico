@@ -21,7 +21,7 @@ export default {
     const url = new URL(req.url);
     if (url.pathname === '/health') return json({ ok: true }, cors);
     if (url.pathname === '/anam-check') { // diagnóstico: comprueba si Anam acepta la configuración (no devuelve el token)
-      try { const { mode } = await anamSession(env, url.searchParams.get('lang') || 'es'); return json({ ok: true, mode }, cors); }
+      try { const { mode, avatar, voice } = await anamSession(env, url.searchParams.get('lang') || 'es'); return json({ ok: true, mode, avatar, voice }, cors); }
       catch (e) { return json({ ok: false, error: String(e.message || e) }, cors, 502); }
     }
     if (req.method !== 'POST') return json({ error: 'method' }, cors, 405);
@@ -65,8 +65,25 @@ export default {
   }
 };
 
-// Crea el token de sesión de Anam. ANAM_AVATAR_ID puede ser el ID de un avatar o el de una persona creada en Anam Lab:
-// primero se prueba como avatar (sesión efímera, guion controlado por Claude) y, si Anam lo rechaza, como persona guardada.
+// Crea el token de sesión de Anam. ANAM_AVATAR_ID puede ser el ID de un avatar o el de una persona de Anam Lab
+// (p. ej. un «digital twin»): si es una persona, se lee su avatar y su voz y se abre una sesión efímera con ellos,
+// de modo que el guion lo sigue controlando Claude y la voz puede cambiar por idioma.
+const personaCache = new Map();
+async function resolveAnamId(env, id) {
+  if (personaCache.has(id)) return personaCache.get(id);
+  let info = { avatarId: id };
+  const r = await fetch('https://api.anam.ai/v1/personas/' + encodeURIComponent(id), {
+    headers: { Authorization: 'Bearer ' + env.ANAM_API_KEY }
+  });
+  if (r.ok) {
+    const p = await r.json();
+    if (p?.avatar?.id) info = { avatarId: p.avatar.id, voiceId: p.voice?.id, personaName: p.name,
+      avatarName: p.avatar.displayName, voiceName: p.voice?.displayName };
+  }
+  personaCache.set(id, info);
+  return info;
+}
+
 async function anamSession(env, lang) {
   const id = env.ANAM_PERSONA_ID || env.ANAM_AVATAR_ID || 'd7741c8e-2541-456b-a72f-c24882a5364a';
   const call = async personaConfig => {
@@ -79,27 +96,24 @@ async function anamSession(env, lang) {
     if (!r.ok) throw new Error('Anam ' + r.status + ': ' + text.slice(0, 300));
     return JSON.parse(text).sessionToken;
   };
-  if (env.ANAM_PERSONA_ID) return { sessionToken: await call({ personaId: id }), mode: 'persona' };
+  // Modo persona guardada "tal cual" (voz, idioma y cerebro los define Anam Lab)
+  if (env.ANAM_USE_SAVED_PERSONA === 'true') return { sessionToken: await call({ personaId: id }), mode: 'persona' };
 
+  const info = await resolveAnamId(env, id);
   const passthrough = (env.VOICE_PROVIDER || 'elevenlabs') === 'elevenlabs';
   let persona;
   if (passthrough) {
-    persona = { avatarId: id, enableAudioPassthrough: true };
+    persona = { avatarId: info.avatarId, enableAudioPassthrough: true };
   } else {
-    const voiceId = env['ANAM_VOICE_ID_' + lang.toUpperCase()] || env.ANAM_VOICE_ID;
+    const voiceId = env['ANAM_VOICE_ID_' + lang.toUpperCase()] || env.ANAM_VOICE_ID || info.voiceId;
     if (!voiceId) throw new Error('ANAM_VOICE_ID not configured');
-    persona = { name: 'Guillermo', avatarId: id, voiceId, languageCode: lang,
-      maxSessionLengthSeconds: Number(env.ANAM_MAX_SECONDS || 1800) };
-    if (env.ANAM_LLM_ID) persona.llmId = env.ANAM_LLM_ID;
-    else persona.llmId = 'CUSTOMER_CLIENT_V1'; // sin "cerebro" de Anam: el guion lo decide Claude
+    persona = { name: 'Guillermo', avatarId: info.avatarId, voiceId, languageCode: lang,
+      maxSessionLengthSeconds: Number(env.ANAM_MAX_SECONDS || 1800),
+      llmId: env.ANAM_LLM_ID || 'CUSTOMER_CLIENT_V1' }; // sin "cerebro" de Anam: el guion lo decide Claude
   }
   if (env.ANAM_AVATAR_MODEL) persona.avatarModel = env.ANAM_AVATAR_MODEL;
-  try {
-    return { sessionToken: await call(persona), mode: 'avatar' };
-  } catch (e) {
-    try { return { sessionToken: await call({ personaId: id }), mode: 'persona' }; }
-    catch (e2) { throw new Error(e.message + ' | como persona: ' + e2.message); }
-  }
+  return { sessionToken: await call(persona), mode: info.personaName ? 'persona→avatar' : 'avatar',
+    avatar: info.avatarName, voice: persona.voiceId === info.voiceId ? info.voiceName : 'ANAM_VOICE_ID' };
 }
 
 function json(obj, cors, status = 200) {
