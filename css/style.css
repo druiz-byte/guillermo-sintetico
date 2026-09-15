@@ -63,3 +63,6 @@ body.anam-on #avatar{display:none}
 .stage{grid-template-columns:minmax(0,1fr) 320px}
 .slide-wrap{max-width:calc((100vh - 220px) * 4 / 3 + 28px);width:100%;justify-self:center}
 .disclaimer{color:var(--muted);font-size:12px;text-align:center;margin:18px auto 0;max-width:720px}
+.avatar.welcome{display:flex;align-items:center;justify-content:center;padding:8%;text-align:center;
+  background:linear-gradient(160deg,var(--soft),var(--panel));border:1px solid var(--line)}
+.avatar.welcome p{margin:0;font:500 clamp(15px,1.35vw,18px)/1.5 Inter,system-ui,sans-serif;color:var(--ink)}
