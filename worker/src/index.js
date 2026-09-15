@@ -1,6 +1,6 @@
-// Cloudflare Worker: proxy seguro entre la web (GitHub Pages) y las APIs de Claude y ElevenLabs.
-// Secretos (wrangler secret put): ANTHROPIC_API_KEY, ELEVENLABS_API_KEY, ANAM_API_KEY
-// Variables (wrangler.toml): ALLOWED_ORIGINS, CLAUDE_MODEL, ELEVEN_MODEL, VOICE_ID(_ES/_EN/_PT), CACHE_TTL
+// Servidor intermedio (Render o Cloudflare Worker) entre la web (GitHub Pages) y las APIs de Claude, Anam y ElevenLabs.
+// Secretos: ANTHROPIC_API_KEY, ANAM_API_KEY (y ELEVENLABS_API_KEY solo si VOICE_PROVIDER=elevenlabs)
+// Variables: ALLOWED_ORIGINS, CLAUDE_MODEL, VOICE_PROVIDER, ANAM_AVATAR_ID, ANAM_VOICE_ID(_ES/_EN/_PT), CACHE_TTL
 
 const LANG_NAME = { es: 'Spanish (Spain)', en: 'English', pt: 'Portuguese' };
 const LOCALE_NAME = { 'es-ES': 'Spanish from Spain', 'en-GB': 'British English', 'en-US': 'American English',
@@ -61,7 +61,10 @@ export default {
         };
         if (env.ANAM_AVATAR_MODEL) persona.avatarModel = env.ANAM_AVATAR_MODEL;
         if (passthrough) persona.enableAudioPassthrough = true;
-        else persona.voiceId = env['ANAM_VOICE_ID_' + lang.toUpperCase()] || env.ANAM_VOICE_ID;
+        else {
+          persona.voiceId = env['ANAM_VOICE_ID_' + lang.toUpperCase()] || env.ANAM_VOICE_ID;
+          if (!persona.voiceId) throw new Error('ANAM_VOICE_ID not configured');
+        }
         const r = await fetch('https://api.anam.ai/v1/auth/session-token', {
           method: 'POST',
           headers: { Authorization: 'Bearer ' + env.ANAM_API_KEY, 'Content-Type': 'application/json' },
@@ -82,7 +85,7 @@ function json(obj, cors, status = 200) {
   return new Response(JSON.stringify(obj), { status, headers: { ...cors, 'Content-Type': 'application/json; charset=utf-8' } });
 }
 
-// Caché compartida en el edge: misma diapositiva + idioma = mismo guion/audio, así se controla el coste.
+// Caché compartida: misma diapositiva + idioma = mismo guion/audio, así se controla el coste.
 async function cached(req, env, ctx, path, keyObj, cors, ttl, make) {
   if (!ttl) return make();
   const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256',

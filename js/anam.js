@@ -86,9 +86,14 @@ window.GSAnam = (function () {
 
   function sayText(text) {
     const my = ++speakToken;
+    // Fin del habla: evento endOfSpeech de Anam; como red de seguridad, duración estimada + margen.
+    const est = (text.split(/\s+/).length / 2.3) * 1000 + 8000;
     return new Promise(res => {
-      pendingText = () => res(my === speakToken);
-      client.talk(text).catch(() => res(false));
+      let done = false;
+      const finish = ok => { if (!done) { done = true; pendingText = null; res(ok && my === speakToken); } };
+      pendingText = () => finish(true);
+      setTimeout(() => finish(true), est);
+      client.talk(text).catch(e => { console.error(e); finish(false); });
     });
   }
 

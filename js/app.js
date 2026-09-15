@@ -29,7 +29,7 @@
     document.querySelectorAll('[data-i18n]').forEach(e => e.textContent = tr(e.dataset.i18n));
     document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = tr(e.dataset.i18nPh));
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-checked', b.dataset.lang === st.lang));
-    $('#modeBadge').textContent = live ? tr('live') : tr('demo');
+    $('#modeBadge').textContent = live ? tr('live') + (C.VOICE_PROVIDER === 'anam' ? 'Anam' : 'ElevenLabs') : tr('demo');
     $('#deckTitle').textContent = pick(st.deck?.title) || 'Guillermo sintético';
     updatePlayBtn(); status(st.playing && !st.paused ? 'speaking' : st.paused ? 'paused' : 'ready');
   }
@@ -87,7 +87,7 @@
   const useAnam = () => window.GSAnam && GSAnam.available();
   // Devuelve lo necesario para que hable: {url} (audio mp3), {pcm} (para Anam) o nada (voz propia de Anam).
   async function tts(text, lang = st.lang) {
-    if (useAnam() && GSAnam.voiceMode() === 'anam') return {};
+    if (C.VOICE_PROVIDER === 'anam') return {}; // voz de Anam (o, si Anam falla, voz del navegador)
     const pcm = useAnam();
     const r = await postJSON('/api/tts', { text, lang, format: pcm ? 'pcm' : 'mp3' });
     return pcm ? { pcm: await r.arrayBuffer() } : { url: URL.createObjectURL(await r.blob()) };
@@ -179,7 +179,7 @@
     } catch (e) {
       console.error(e);
       document.body.classList.remove('anam-on');
-      window.GS_CONFIG.AVATAR_PROVIDER = 'svg'; // recurre al avatar ilustrado y al audio mp3
+      window.GS_CONFIG.AVATAR_PROVIDER = 'svg'; // recurre al avatar ilustrado
       st.cache.clear();
     }
   }
