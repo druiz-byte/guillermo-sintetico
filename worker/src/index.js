@@ -1,6 +1,6 @@
 // Servidor intermedio (Render o Cloudflare Worker) entre la web (GitHub Pages) y las APIs de Claude, Anam y ElevenLabs.
 // Secretos: ANTHROPIC_API_KEY, ANAM_API_KEY (y ELEVENLABS_API_KEY solo si VOICE_PROVIDER=elevenlabs)
-// Variables: ALLOWED_ORIGINS, CLAUDE_MODEL, VOICE_PROVIDER, ANAM_AVATAR_ID, ANAM_VOICE_ID(_ES/_EN/_PT), CACHE_TTL
+// Variables: ALLOWED_ORIGINS, CLAUDE_MODEL, VOICE_PROVIDER, ANAM_AVATAR_ID o ANAM_PERSONA_ID, ANAM_VOICE_ID(_ES/_EN/_PT), CACHE_TTL
 
 const LANG_NAME = { es: 'Spanish (Spain)', en: 'English', pt: 'Portuguese' };
 const LOCALE_NAME = { 'es-ES': 'Spanish from Spain', 'en-GB': 'British English', 'en-US': 'American English',
@@ -20,6 +20,10 @@ export default {
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
     const url = new URL(req.url);
     if (url.pathname === '/health') return json({ ok: true }, cors);
+    if (url.pathname === '/anam-check') { // diagnóstico: comprueba si Anam acepta la configuración (no devuelve el token)
+      try { const { mode } = await anamSession(env, url.searchParams.get('lang') || 'es'); return json({ ok: true, mode }, cors); }
+      catch (e) { return json({ ok: false, error: String(e.message || e) }, cors, 502); }
+    }
     if (req.method !== 'POST') return json({ error: 'method' }, cors, 405);
     if (!okOrigin) return json({ error: 'origin not allowed' }, cors, 403);
 
@@ -51,28 +55,8 @@ export default {
         });
       }
       if (url.pathname === '/api/anam-session') {
-        const passthrough = (env.VOICE_PROVIDER || 'elevenlabs') === 'elevenlabs';
-        const persona = {
-          name: 'Guillermo',
-          avatarId: env.ANAM_AVATAR_ID || 'd7741c8e-2541-456b-a72f-c24882a5364a',
-          llmId: 'CUSTOMER_CLIENT_V1',          // sin "cerebro" de Anam: el guion lo decide Claude
-          languageCode: lang,
-          maxSessionLengthSeconds: Number(env.ANAM_MAX_SECONDS || 1800)
-        };
-        if (env.ANAM_AVATAR_MODEL) persona.avatarModel = env.ANAM_AVATAR_MODEL;
-        if (passthrough) persona.enableAudioPassthrough = true;
-        else {
-          persona.voiceId = env['ANAM_VOICE_ID_' + lang.toUpperCase()] || env.ANAM_VOICE_ID;
-          if (!persona.voiceId) throw new Error('ANAM_VOICE_ID not configured');
-        }
-        const r = await fetch('https://api.anam.ai/v1/auth/session-token', {
-          method: 'POST',
-          headers: { Authorization: 'Bearer ' + env.ANAM_API_KEY, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ personaConfig: persona })
-        });
-        if (!r.ok) throw new Error('Anam ' + r.status + ': ' + (await r.text()).slice(0, 300));
-        const { sessionToken } = await r.json();
-        return json({ sessionToken }, cors);
+        const { sessionToken, mode } = await anamSession(env, lang);
+        return json({ sessionToken, mode }, cors);
       }
       return json({ error: 'not found' }, cors, 404);
     } catch (e) {
@@ -80,6 +64,43 @@ export default {
     }
   }
 };
+
+// Crea el token de sesión de Anam. ANAM_AVATAR_ID puede ser el ID de un avatar o el de una persona creada en Anam Lab:
+// primero se prueba como avatar (sesión efímera, guion controlado por Claude) y, si Anam lo rechaza, como persona guardada.
+async function anamSession(env, lang) {
+  const id = env.ANAM_PERSONA_ID || env.ANAM_AVATAR_ID || 'd7741c8e-2541-456b-a72f-c24882a5364a';
+  const call = async personaConfig => {
+    const r = await fetch('https://api.anam.ai/v1/auth/session-token', {
+      method: 'POST',
+      headers: { Authorization: 'Bearer ' + env.ANAM_API_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ personaConfig })
+    });
+    const text = await r.text();
+    if (!r.ok) throw new Error('Anam ' + r.status + ': ' + text.slice(0, 300));
+    return JSON.parse(text).sessionToken;
+  };
+  if (env.ANAM_PERSONA_ID) return { sessionToken: await call({ personaId: id }), mode: 'persona' };
+
+  const passthrough = (env.VOICE_PROVIDER || 'elevenlabs') === 'elevenlabs';
+  let persona;
+  if (passthrough) {
+    persona = { avatarId: id, enableAudioPassthrough: true };
+  } else {
+    const voiceId = env['ANAM_VOICE_ID_' + lang.toUpperCase()] || env.ANAM_VOICE_ID;
+    if (!voiceId) throw new Error('ANAM_VOICE_ID not configured');
+    persona = { name: 'Guillermo', avatarId: id, voiceId, languageCode: lang,
+      maxSessionLengthSeconds: Number(env.ANAM_MAX_SECONDS || 1800) };
+    if (env.ANAM_LLM_ID) persona.llmId = env.ANAM_LLM_ID;
+    else persona.llmId = 'CUSTOMER_CLIENT_V1'; // sin "cerebro" de Anam: el guion lo decide Claude
+  }
+  if (env.ANAM_AVATAR_MODEL) persona.avatarModel = env.ANAM_AVATAR_MODEL;
+  try {
+    return { sessionToken: await call(persona), mode: 'avatar' };
+  } catch (e) {
+    try { return { sessionToken: await call({ personaId: id }), mode: 'persona' }; }
+    catch (e2) { throw new Error(e.message + ' | como persona: ' + e2.message); }
+  }
+}
 
 function json(obj, cors, status = 200) {
   return new Response(JSON.stringify(obj), { status, headers: { ...cors, 'Content-Type': 'application/json; charset=utf-8' } });
